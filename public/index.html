@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<title>Contact List App</title>
+</head>
+<body>
+         
+	<div class="container" ng-controller="myController as ctrl">
+	<h1>Reports</h1>
+	Search : <input type="text" placeholder="Search Ads" ng-model="searchText"/>
+</br></br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="report in reports | filter:searchText">
+				<td>{{report.id}}</td>
+				<td>{{report.name}}</td>
+			</tr> 
+		</tbody>
+	</table>
+	 <canvas id="outreach"  class="chart chart-bar" 
+        chart-labels="ctrl.socialChart.labels" 
+        chart-data="ctrl.socialChart.data" 
+        chart-series="ctrl.socialChart.series"
+        chart-colors="ctrl.socialChart.colors"
+        chart-options="ctrl.socialChart.options"></canvas> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+	<script src="controllers/controller.js"></script>
+	<script type="controllers/controller1.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/1.0.3/angular-chart.min.js"></script>   
+</body>
+</html>
